@@ -1,0 +1,36 @@
+{
+    "bridge": {
+        "name": "Homebridge-2",
+        "username": "CC:22:3D:E3:CE:32",
+        "port": 49173,
+        "pin": "031-45-154"
+    },
+    "platforms": [
+        {
+            "platform": "config",
+            "name": "Config",
+            "port": 8080,
+            "sudo": false
+        }
+    ],
+    "accessories": [
+        {
+            "accessory": "HTTP-SWITCH",
+            "name": "Light",
+            "switchType": "stateful",
+            "onUrl": "http://192.168.192.3/cm?cmnd=Power%20On",
+            "offUrl": "http://192.168.192.3/cm?cmnd=Power%20Off",
+            "statusUrl": "http://192.168.192.3/cm?cmnd=Power",
+            "statusPattern": "ON"
+        },
+        {
+            "accessory": "HTTP-SWITCH",
+            "name": "Monitors",
+            "switchType": "stateful",
+            "onUrl": "http://192.168.192.51/cm?cmnd=Power%20On",
+            "offUrl": "http://192.168.192.51/cm?cmnd=Power%20Off",
+            "statusUrl": "http://192.168.192.51/cm?cmnd=Power",
+            "statusPattern": "ON"
+        }
+    ]
+}
